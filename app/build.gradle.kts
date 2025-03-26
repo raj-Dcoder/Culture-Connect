@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -41,8 +42,9 @@ android {
 
 dependencies {
 
+    implementation(libs.firebase.database)
     val nav_version = "2.8.9"
-
+    val compose_version = "1.7.8"
     // Jetpack Compose integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
@@ -52,12 +54,21 @@ dependencies {
 
     // Feature module support for Fragments
     implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+    implementation("androidx.navigation:navigation-ui:$nav_version")
 
     // Testing Navigation
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
 
     // JSON serialization library, works with the Kotlin serialization plugin
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation("androidx.compose.material:material")
+    implementation("androidx.compose.runtime:runtime-livedata:$compose_version")
+
+    //firebase Authentication Dependency
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

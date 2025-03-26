@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">CultureConnect</string>
     <string name="offer_icon_button">Offers</string>
-    <string name="events_nearby">Events Nearby</string>
+    <string name="events_nearby">Events</string>
 </resources>
